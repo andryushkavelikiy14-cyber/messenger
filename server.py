@@ -353,4 +353,5 @@ if __name__ == "__main__":
     print("✅ Сервер запущен: http://localhost:3000")
     print("📱 Открой в браузере и зарегистрируйся")
     print("🔐 Код 2FA будет появляться здесь, в терминале\n")
-    uvicorn.run(app, host="0.0.0.0", port=3000)
+    import os
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 3000)))
